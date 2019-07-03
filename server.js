@@ -1,9 +1,13 @@
-var express = require('express'),
+const express = require('express'),
   app = express(),
   port = process.env.PORT || 3001,
   bodyParser = require('body-parser'),
   fs = require('fs')
-  cors = require('cors');
+  cors = require('cors'),
+  admin = require('firebase-admin'),
+  serviceAccount = require('./ServiceAccountKey.json');
+  
+
   // mongoose = require('mongoose'),
   // Post = require('./api/models/noonGalleryModel'), //created model loading here
 
