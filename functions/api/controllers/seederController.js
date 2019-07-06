@@ -3,7 +3,13 @@
 const getDb = require("../../db/db").getDb;
 const initDb = require("../../db/db").initDb;
 
-	
+
+/**
+ * initial db seeder
+ * @param  {[type]} req [description]
+ * @param  {[type]} res [description]
+ * @return {[type]}     [description]
+ */
 exports.data_seeder = function(req, res) {
 	console.log('data_seeder');
 	
@@ -24,32 +30,16 @@ exports.data_seeder = function(req, res) {
 	setPost3.then(r => {
 	    console.log('Set: ', r);
 		res.json('success!')
-	  });
-
-	initDb(function (err, db) {
-
-			
-		/*db.collection('posts').get()
-		  .then((snapshot) => {
-		  	
-		  	console.log(Object.keys(snapshot).length)
-		  	snapshot.forEach((doc) => {
-		  		console.log(doc.id, '=>', doc.data());
-		  	})
-		    console.log('data already populated!')
-		    // res.json('data already populated!');
-		  })
-		  .catch((err) => {
-		    console.log('Error getting documents', err);
-
-		    // res.json('Error : ' + err);
-			// res.json(err);
-		  });*/
-
 	});
+
+	initDb(function (err, db) {});
 };
 
 
+/**
+ * dummy post data
+ * @return {[type]} [description]
+ */
 function getPosts(){
 		return [
 		    {

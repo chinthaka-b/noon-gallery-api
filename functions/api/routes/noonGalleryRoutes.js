@@ -2,6 +2,7 @@ module.exports = function(app) {
   var galleryList = require('../controllers/noonGalleryController');
   var seeder = require('../controllers/seederController');
   console.log('routes');
+  
   // posts Routes
   app.route('/posts') 
     .get(galleryList.list_all_posts); //get all the post

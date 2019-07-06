@@ -1,9 +1,13 @@
 const assert = require("assert");
-// const functions = require('firebase-functions');
 const serviceAccount = require('../ServiceAccountKey.json');
 
 let _db;
 
+/**
+ * initialize db connection
+ * @param  {Function} callback [description]
+ * @return {[type]}            [description]
+ */
 function initDb(callback) {
     if (_db) {
         console.warn("Trying to init DB again!");
@@ -21,6 +25,11 @@ function initDb(callback) {
     return callback(null, _db);
 }
 
+
+/**
+ * get db connection if init
+ * @return {[type]} [description]
+ */
 function getDb() {
     assert.ok(_db, "Db has not been initialized. Please called init first.");
     return _db;
